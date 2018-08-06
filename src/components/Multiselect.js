@@ -15,7 +15,7 @@ export default class Multiselect extends Component {
   }
 
   isChecked(name) {
-    return this.props.selection.includes(name) ? true : false;
+    return this.props.selection.includes(name);
   }
 
   render() {
@@ -28,7 +28,6 @@ export default class Multiselect extends Component {
     });
   }
 }
-
 
 class Checkbox extends Component {
 

@@ -5,12 +5,7 @@ export default class Organell extends Component {
 
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
     this.getFill = this.getFill.bind(this);
-  }
-
-  handleClick(d) {
-    this.props.onClick(this.props.name);
   }
 
   getFill() {
@@ -19,13 +14,43 @@ export default class Organell extends Component {
 
   render() {
     return (
-      <path
-        d={this.props.path}
-        stroke={this.props.clickedColor}
-        fill={this.getFill()}
-        fillOpacity="0.5"
-        onClick={this.handleClick}
-      />
+      <g name={this.props.name}>
+        <FillPath
+            name={this.props.name}
+            fill={this.getFill()}
+            path={this.props.fillPath}
+            onClick={this.props.onClick} />
+        <ContourPath2 contourPath={this.props.contourPath} />
+      </g>
     );
   }
+}
+
+
+class FillPath extends Component {
+
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    console.log(this.props.name);
+    this.props.onClick(this.props.name);
+  }
+
+  render() {
+    return (
+      <path
+        d={this.props.path}
+        fill={this.props.fill}
+        fillOpacity="0.5"
+        onClick={this.handleClick} />
+    );
+  }
+}
+
+
+function ContourPath2(props) {
+  return <path d={props.contourPath} stroke="gray" fill="none" />;
 }

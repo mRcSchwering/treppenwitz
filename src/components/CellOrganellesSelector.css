@@ -1,0 +1,38 @@
+div.CellOrganellesSelector {
+    width: 804px;
+    margin: 0 auto;
+}
+
+div.cell-selector, div.list-selector {
+    border: 1px solid white;
+    float: left;
+    min-height: 400px;
+    width: 400px;
+}
+
+div.cell-selector > svg {
+    width: 400px;
+    height: 400px;
+}
+
+ul.ListSelector {
+    list-style-type: none;
+    padding: 10px 1px 10px 1px;
+    text-align: left;
+}
+
+ul.ListSelector > a > li {
+    padding: 10px 1px 10px 1px;
+}
+
+li.ListSelectorItemChecked {
+    background-color: seashell;
+}
+
+li.ListSelectorItemUnchecked {
+    background-color: white;
+}
+
+ul.ListSelectorItemSublist {
+    list-style-type: none;
+}
