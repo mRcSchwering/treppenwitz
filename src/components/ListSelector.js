@@ -20,7 +20,8 @@ export default class ListSelector extends Component {
   }
 
   render() {
-    const listItems = this.props.organelles.map((d) => {
+    const availableItems = this.props.organelles.filter(d => this.props.available.includes(d.name));
+    const listItems = availableItems.map((d) => {
       return <ListItem
         key={d.name}
         name={d.name}

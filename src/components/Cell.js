@@ -4,10 +4,6 @@ import Organell from './Organell';
 
 export default class Cell extends Component {
 
-  static isOrganellInSelection(arr, name) {
-    return arr.includes(name);
-  }
-
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
@@ -17,15 +13,24 @@ export default class Cell extends Component {
     this.props.onClick(name);
   }
 
+  isOrganellAvailable(name) {
+    return this.props.available.includes(name);
+  }
+
+  isOrganellInSelection(name) {
+    return this.props.selection.includes(name);
+  }
+
   render() {
     const orgs = this.props.organelles.map((d) => {
       return (
         <Organell
           key={d.name}
           name={d.name}
-          fillPath={d.fillPath}
-          contourPath={d.contourPath}
-          isSelected={Cell.isOrganellInSelection(this.props.selection, d.name)}
+          clickArea={d.clickArea}
+          contourPaths={d.contourPaths}
+          isAvailable={this.isOrganellAvailable(d.name)}
+          isSelected={this.isOrganellInSelection(d.name)}
           color={d.color}
           clickedColor={d.clickedColor}
           onClick={this.handleClick}

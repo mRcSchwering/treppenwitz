@@ -9,6 +9,9 @@ export default class Organell extends Component {
   }
 
   getFill() {
+    if (!this.props.isAvailable) {
+      return 'white';
+    }
     return this.props.isSelected ? this.props.clickedColor : this.props.color;
   }
 
@@ -18,9 +21,9 @@ export default class Organell extends Component {
         <FillPath
             name={this.props.name}
             fill={this.getFill()}
-            path={this.props.fillPath}
+            path={this.props.clickArea}
             onClick={this.props.onClick} />
-        <ContourPath2 contourPath={this.props.contourPath} />
+        <ContourPath2 contourPaths={this.props.contourPaths} />
       </g>
     );
   }
@@ -35,7 +38,6 @@ class FillPath extends Component {
   }
 
   handleClick() {
-    console.log(this.props.name);
     this.props.onClick(this.props.name);
   }
 
@@ -52,5 +54,8 @@ class FillPath extends Component {
 
 
 function ContourPath2(props) {
-  return <path d={props.contourPath} stroke="gray" fill="none" />;
+  const paths = props.contourPaths.map((d, i) => {
+    return <path d={d} key={i} fill="none" stroke="gray"/>;
+  });
+  return <g className="OrganellContours">{paths}</g>;
 }

@@ -1,5 +1,5 @@
 div.CellOrganellesSelector {
-    width: 804px;
+    width: 1024px;
     margin: 0 auto;
 }
 
@@ -7,17 +7,27 @@ div.cell-selector, div.list-selector {
     border: 1px solid white;
     float: left;
     min-height: 400px;
-    width: 400px;
+}
+
+div.list-selector {
+    border: 1px solid white;
+    float: left;
+    min-height: 400px;
+    width: 500px;
+}
+
+div.cell-selector {
+    width: 520px;
 }
 
 div.cell-selector > svg {
-    width: 400px;
-    height: 400px;
+    width: 520px;
+    height: 419px;
 }
 
 ul.ListSelector {
     list-style-type: none;
-    padding: 10px 1px 10px 1px;
+    padding: 30px 1px 10px 10px;
     text-align: left;
 }
 
