@@ -23,7 +23,8 @@ export default class CellOrganellesSelector extends Component {
   }
 
   addOrRemoveName(arr, name) {
-    if (!this.props.available.includes(name)) {
+    const available = this.props.organellData.map(d => d.name);
+    if (!available.includes(name)) {
       return arr;
     }
     if (arr.includes(name)) {
@@ -41,18 +42,18 @@ export default class CellOrganellesSelector extends Component {
 
         <div className="cell-selector">
           <Cell
-            organelles={this.props.organelles}
+            organellSVGs={this.props.organellSVGs}
+            organellData={this.props.organellData}
             selection={this.state.selectedNames}
-            available={this.props.available}
             onClick={this.handleClick}
           />
         </div>
 
         <div className="list-selector">
           <ListSelector
-            organelles={this.props.organelles}
+            organellSVGs={this.props.organellSVGs}
+            organellData={this.props.organellData}
             selection={this.state.selectedNames}
-            available={this.props.available}
             onClick={this.handleClick}
           />
         </div>

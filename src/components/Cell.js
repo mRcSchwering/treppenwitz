@@ -13,25 +13,28 @@ export default class Cell extends Component {
     this.props.onClick(name);
   }
 
-  isOrganellAvailable(name) {
-    return this.props.available.includes(name);
-  }
-
   isOrganellInSelection(name) {
     return this.props.selection.includes(name);
   }
 
+  getOrganellColor(name){
+    const filtered = this.props.organellData.filter(d => d.name === name);
+    if (filtered.length > 0) {
+      return filtered[0].color;
+    }
+    return 'transparent';
+  }
+
   render() {
-    const orgs = this.props.organelles.map((d) => {
+    const orgs = this.props.organellSVGs.map((d) => {
       return (
         <Organell
           key={d.name}
           name={d.name}
-          clickArea={d.clickArea}
+          clickAreaPath={d.clickAreaPath}
           contourPaths={d.contourPaths}
-          isAvailable={this.isOrganellAvailable(d.name)}
           isSelected={this.isOrganellInSelection(d.name)}
-          color={d.color}
+          color={this.getOrganellColor(d.name)}
           clickedColor={d.clickedColor}
           onClick={this.handleClick}
         />
