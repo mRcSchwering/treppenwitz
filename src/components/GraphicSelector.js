@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Organell from './Organell';
+import PropTypes from 'prop-types';
 
 
-export default class Cell extends Component {
+export default class GraphicSelector extends Component {
 
   constructor(props) {
     super(props);
@@ -42,3 +43,22 @@ export default class Cell extends Component {
     );
   }
 }
+
+GraphicSelector.propTypes = {
+  selection: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onClick: PropTypes.func.isRequired,
+  organellData: PropTypes.arrayOf(
+      PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          color: PropTypes.string.isRequired,
+          items: PropTypes.arrayOf(PropTypes.string).isRequired,
+      })
+  ).isRequired,
+  organellSVGs: PropTypes.arrayOf(
+      PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          clickAreaPath: PropTypes.string.isRequired,
+          graphicElements: PropTypes.arrayOf(PropTypes.element).isRequired,
+      })
+  ).isRequired,
+};

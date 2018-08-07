@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import ListItem from './ListItem';
+import PropTypes from 'prop-types';
 
 
 export default class ListSelector extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {selected: []};
     this.handleClick = this.handleClick.bind(this);
-    this.isChecked = this.isChecked.bind(this);
   }
 
   handleClick(name) {
@@ -31,3 +30,22 @@ export default class ListSelector extends Component {
     return(<ul className="ListSelector">{listItems}</ul>);
   }
 }
+
+ListSelector.propTypes = {
+  selection: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onClick: PropTypes.func.isRequired,
+  organellData: PropTypes.arrayOf(
+      PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          color: PropTypes.string.isRequired,
+          items: PropTypes.arrayOf(PropTypes.string).isRequired,
+      })
+  ).isRequired,
+  organellSVGs: PropTypes.arrayOf(
+      PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          clickAreaPath: PropTypes.string.isRequired,
+          graphicElements: PropTypes.arrayOf(PropTypes.element).isRequired,
+      })
+  ).isRequired,
+};

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 
 export default class Organell extends Component {
@@ -24,6 +25,17 @@ export default class Organell extends Component {
   }
 }
 
+Organell.propTypes = {
+  color: PropTypes.PropTypes.string.isRequired,
+  isSelected: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+  organellSVG: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      clickAreaPath: PropTypes.string.isRequired,
+      graphicElements: PropTypes.arrayOf(PropTypes.element).isRequired,
+  }).isRequired,
+};
+
 
 class ClickArea extends Component {
 
@@ -41,12 +53,28 @@ class ClickArea extends Component {
   }
 }
 
+ClickArea.propTypes = {
+  name: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
+
 
 function ColorArea(props) {
   return <path d={props.path} fill={props.fill} fillOpacity={props.opacity} />;
 }
 
+ColorArea.propTypes = {
+  fill: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
+  opacity: PropTypes.number.isRequired,
+};
+
 
 function Graphic(props) {
   return <g className="OrganellContours">{props.elements}</g>;
 }
+
+Graphic.propTypes = {
+  elements: PropTypes.arrayOf(PropTypes.element).isRequired,
+};

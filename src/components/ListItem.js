@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 
 export default class ListItem extends Component {
@@ -33,7 +34,18 @@ export default class ListItem extends Component {
   }
 }
 
+ListItem.propTypes = {
+  name: PropTypes.string.isRequired,
+  isChecked: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+  items: PropTypes.arrayOf(PropTypes.string).isRequired
+};
+
 
 function ListSubItem(props) {
   return <li className="ListSubItem">{props.name}</li>;
 }
+
+ListSubItem.propTypes = {
+  name: PropTypes.string.isRequired
+};

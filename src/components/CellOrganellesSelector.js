@@ -1,10 +1,28 @@
 import React, { Component } from 'react';
 import './CellOrganellesSelector.css';
-import Cell from './Cell.js'
+import GraphicSelector from './GraphicSelector.js'
 import ListSelector from "./ListSelector";
+import PropTypes from 'prop-types';
 
 
 export default class CellOrganellesSelector extends Component {
+    /**
+     * CellOrganellesSelector (1)
+     *   |
+     *   |-- GraphicSelector (1)
+     *   |     |
+     *   |     |-- Organell (n)
+     *   |           |
+     *   |           |-- ClickArea (1)
+     *   |           |-- ColorArea (1)
+     *   |           |-- Graphic (1)
+     *   |
+     *   |-- ListSelector (1)
+     *         |
+     *         |-- ListItem (n)
+     *               |
+     *               |-- ListSubItem (n)
+     */
 
   constructor(props) {
     super(props);
@@ -40,8 +58,8 @@ export default class CellOrganellesSelector extends Component {
     return(
       <div className="CellOrganellesSelector">
 
-        <div className="cell-selector">
-          <Cell
+        <div className="graphic-selector">
+          <GraphicSelector
             organellSVGs={this.props.organellSVGs}
             organellData={this.props.organellData}
             selection={this.state.selectedNames}
@@ -61,3 +79,20 @@ export default class CellOrganellesSelector extends Component {
     );
   }
 }
+
+CellOrganellesSelector.propTypes = {
+  organellData: PropTypes.arrayOf(
+      PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          color: PropTypes.string.isRequired,
+          items: PropTypes.arrayOf(PropTypes.string).isRequired,
+      })
+  ).isRequired,
+  organellSVGs: PropTypes.arrayOf(
+      PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          clickAreaPath: PropTypes.string.isRequired,
+          graphicElements: PropTypes.arrayOf(PropTypes.element).isRequired,
+      })
+  ).isRequired,
+};

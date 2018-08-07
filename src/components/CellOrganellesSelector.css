@@ -3,7 +3,7 @@ div.CellOrganellesSelector {
     margin: 0 auto;
 }
 
-div.cell-selector, div.list-selector {
+div.graphic-selector, div.list-selector {
     border: 1px solid white;
     float: left;
     min-height: 400px;
@@ -16,11 +16,11 @@ div.list-selector {
     width: 500px;
 }
 
-div.cell-selector {
+div.graphic-selector {
     width: 520px;
 }
 
-div.cell-selector > svg {
+div.graphic-selector > svg {
     width: 520px;
     height: 419px;
 }
