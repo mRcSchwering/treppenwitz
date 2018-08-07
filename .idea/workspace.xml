@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8382cc41-7db5-4820-99fc-3c2ed84dda86" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/organellesData.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
       <change beforePath="$PROJECT_DIR$/src/components/Cell.js" afterPath="$PROJECT_DIR$/src/components/Cell.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/CellOrganellesSelector.js" afterPath="$PROJECT_DIR$/src/components/CellOrganellesSelector.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/ListSelector.js" afterPath="$PROJECT_DIR$/src/components/ListSelector.js" />
       <change beforePath="$PROJECT_DIR$/src/components/Organell.js" afterPath="$PROJECT_DIR$/src/components/Organell.js" />
-      <change beforePath="$PROJECT_DIR$/src/organelles.js" afterPath="$PROJECT_DIR$/src/organellSVGs.js" />
+      <change beforePath="$PROJECT_DIR$/src/organellSVGs.js" afterPath="$PROJECT_DIR$/src/organellSVGs.js" />
+      <change beforePath="$PROJECT_DIR$/src/organellesData.js" afterPath="$PROJECT_DIR$/src/organellesData.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,8 +20,8 @@
       <file leaf-file-name="CellOrganellesSelector.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/CellOrganellesSelector.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="45" column="24" lean-forward="false" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="24" />
+            <state relative-caret-position="119">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -35,8 +32,8 @@
       <file leaf-file-name="organellSVGs.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/organellSVGs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="117" column="5" lean-forward="true" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
+            <state relative-caret-position="102">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -45,8 +42,8 @@
       <file leaf-file-name="organellesData.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/organellesData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="2" column="10" lean-forward="true" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+            <state relative-caret-position="34">
+              <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -77,8 +74,8 @@
       <file leaf-file-name="Cell.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Cell.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="238">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -89,8 +86,8 @@
       <file leaf-file-name="Organell.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Organell.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="34" />
+            <state relative-caret-position="153">
+              <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -136,6 +133,7 @@
       <find>&quot;none&quot;</find>
       <find>opacity=&quot;0.1&quot;</find>
       <find>&lt;circle</find>
+      <find>contourPaths</find>
     </findStrings>
     <replaceStrings>
       <replace>clickArea:</replace>
@@ -144,6 +142,7 @@
       <replace>{contourFill}</replace>
       <replace>&lt;circle fill={contourFill} stroke={contourStroke}</replace>
       <replace>&lt;circle fill={contourFill} stroke={contourStroke}</replace>
+      <replace>graphicElements</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -160,12 +159,12 @@
         <option value="$PROJECT_DIR$/src/components/organalles.js" />
         <option value="$PROJECT_DIR$/src/components/CellOrganellesSelector.css" />
         <option value="$PROJECT_DIR$/src/organelles.js" />
-        <option value="$PROJECT_DIR$/src/components/Organell.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/CellOrganellesSelector.js" />
         <option value="$PROJECT_DIR$/src/components/ListSelector.js" />
         <option value="$PROJECT_DIR$/src/organellSVGs.js" />
         <option value="$PROJECT_DIR$/src/components/Cell.js" />
+        <option value="$PROJECT_DIR$/src/components/Organell.js" />
         <option value="$PROJECT_DIR$/src/organellesData.js" />
       </list>
     </option>
@@ -179,7 +178,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1096" />
@@ -271,7 +270,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -381,14 +380,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ListItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="1" lean-forward="false" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/CellOrganellesSelector.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -407,6 +398,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Organell.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ListItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="1" lean-forward="false" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/organellSVGs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ListSelector.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -417,36 +432,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CellOrganellesSelector.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Cell.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="45" column="24" lean-forward="false" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="24" />
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/organellSVGs.js">
+    <entry file="file://$PROJECT_DIR$/src/components/CellOrganellesSelector.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="117" column="5" lean-forward="true" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Organell.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Cell.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -455,8 +454,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/organellesData.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="2" column="10" lean-forward="true" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        <state relative-caret-position="34">
+          <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
           <folding />
         </state>
       </provider>

@@ -30,12 +30,9 @@ export default class Cell extends Component {
       return (
         <Organell
           key={d.name}
-          name={d.name}
-          clickAreaPath={d.clickAreaPath}
-          contourPaths={d.contourPaths}
+          organellSVG={d}
           isSelected={this.isOrganellInSelection(d.name)}
           color={this.getOrganellColor(d.name)}
-          clickedColor={d.clickedColor}
           onClick={this.handleClick}
         />
       );

@@ -9,14 +9,16 @@ export default class Organell extends Component {
 
   render() {
     return (
-      <g name={this.props.name}>
-        <ClickArea
-            name={this.props.name}
+      <g name={this.props.organellSVG.name}>
+        <ColorArea
             fill={this.props.color}
             opacity={this.getOpacity()}
-            path={this.props.clickAreaPath}
+            path={this.props.organellSVG.clickAreaPath} />
+        <Graphic elements={this.props.organellSVG.graphicElements} />
+        <ClickArea
+            name={this.props.organellSVG.name}
+            path={this.props.organellSVG.clickAreaPath}
             onClick={this.props.onClick} />
-        <Graphic elements={this.props.contourPaths} />
       </g>
     );
   }
@@ -35,14 +37,13 @@ class ClickArea extends Component {
   }
 
   render() {
-    return (
-      <path
-          d={this.props.path}
-          fill={this.props.fill}
-          fillOpacity={this.props.opacity}
-          onClick={this.handleClick} />
-    );
+    return <path d={this.props.path} fill="transparent" onClick={this.handleClick} />;
   }
+}
+
+
+function ColorArea(props) {
+  return <path d={props.path} fill={props.fill} fillOpacity={props.opacity} />;
 }
 
 
