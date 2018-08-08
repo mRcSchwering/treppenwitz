@@ -9,25 +9,31 @@ export default class GraphicItem extends Component {
   }
 
   render() {
-    return (
-      <g name={this.props.itemSVG.name}>
+    const elements = [
         <ColorArea
+            key="1"
             fill={this.props.color}
             opacity={this.getOpacity()}
-            path={this.props.itemSVG.clickAreaPath} />
-        <Graphic elements={this.props.itemSVG.graphicElements} />
-        <ClickArea
+            path={this.props.itemSVG.clickAreaPath} />,
+        <Graphic key="2" elements={this.props.itemSVG.graphicElements} />,
+    ];
+    if (this.props.isAvailable) {
+      elements.push(
+          <ClickArea
+            key="3"
             name={this.props.itemSVG.name}
             path={this.props.itemSVG.clickAreaPath}
             onClick={this.props.onClick} />
-      </g>
-    );
+      );
+    }
+    return <g name={this.props.itemSVG.name}>{elements}</g>;
   }
 }
 
 GraphicItem.propTypes = {
   color: PropTypes.PropTypes.string.isRequired,
   isSelected: PropTypes.bool.isRequired,
+  isAvailable: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
   itemSVG: PropTypes.shape({
       name: PropTypes.string.isRequired,

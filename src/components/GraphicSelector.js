@@ -18,6 +18,11 @@ export default class GraphicSelector extends Component {
     return this.props.selection.includes(name);
   }
 
+  isItemInData(name) {
+    const available = this.props.itemData.filter(d => d.name === name);
+    return available.length > 0;
+  }
+
   getItemColor(name){
     const filtered = this.props.itemData.filter(d => d.name === name);
     if (filtered.length > 0) {
@@ -27,19 +32,20 @@ export default class GraphicSelector extends Component {
   }
 
   render() {
-    const orgs = this.props.itemSVGs.map((d) => {
+    const items = this.props.itemSVGs.map((d) => {
       return (
         <GraphicItem
           key={d.name}
           itemSVG={d}
           isSelected={this.isItemInSelection(d.name)}
+          isAvailable={this.isItemInData(d.name)}
           color={this.getItemColor(d.name)}
           onClick={this.handleClick}
         />
       );
     });
     return (
-      <svg>{orgs}</svg>
+      <svg>{items}</svg>
     );
   }
 }

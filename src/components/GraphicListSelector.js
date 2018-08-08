@@ -24,6 +24,16 @@ export default class GraphicListSelector extends Component {
      *               |-- ListSubItem (n)
      */
 
+  static addOrRemoveName(arr, name) {
+    if (arr.includes(name)) {
+      const idx = arr.indexOf(name);
+      arr.splice(idx, 1);
+      return arr;
+    } else {
+      return arr.concat([name]);
+    }
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -34,24 +44,10 @@ export default class GraphicListSelector extends Component {
 
   handleClick(name) {
     this.setState((prevState) => ({
-      selectedNames: this.addOrRemoveName(prevState.selectedNames, name)
+      selectedNames: GraphicListSelector.addOrRemoveName(prevState.selectedNames, name)
     }), function() {
       console.log('CellOrganellesSelector: ' + this.state.selectedNames);
     });
-  }
-
-  addOrRemoveName(arr, name) {
-    const available = this.props.itemData.map(d => d.name);
-    if (!available.includes(name)) {
-      return arr;
-    }
-    if (arr.includes(name)) {
-      const idx = arr.indexOf(name);
-      arr.splice(idx, 1);
-      return arr;
-    } else {
-      return arr.concat([name]);
-    }
   }
 
   render() {
