@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import './CellOrganellesSelector.css';
+import './GraphicListSelector.css';
 import GraphicSelector from './GraphicSelector.js'
 import ListSelector from "./ListSelector";
 import PropTypes from 'prop-types';
 
 
-export default class CellOrganellesSelector extends Component {
+export default class GraphicListSelector extends Component {
     /**
-     * CellOrganellesSelector (1)
+     * GraphicListSelector (1)
      *   |
      *   |-- GraphicSelector (1)
      *   |     |
-     *   |     |-- Organell (n)
+     *   |     |-- GraphicItem (n)
      *   |           |
      *   |           |-- ClickArea (1)
      *   |           |-- ColorArea (1)
@@ -41,7 +41,7 @@ export default class CellOrganellesSelector extends Component {
   }
 
   addOrRemoveName(arr, name) {
-    const available = this.props.organellData.map(d => d.name);
+    const available = this.props.itemData.map(d => d.name);
     if (!available.includes(name)) {
       return arr;
     }
@@ -56,12 +56,12 @@ export default class CellOrganellesSelector extends Component {
 
   render() {
     return(
-      <div className="CellOrganellesSelector">
+      <div className="GraphicListSelector">
 
         <div className="graphic-selector">
           <GraphicSelector
-            organellSVGs={this.props.organellSVGs}
-            organellData={this.props.organellData}
+            itemSVGs={this.props.itemSVGs}
+            itemData={this.props.itemData}
             selection={this.state.selectedNames}
             onClick={this.handleClick}
           />
@@ -69,8 +69,7 @@ export default class CellOrganellesSelector extends Component {
 
         <div className="list-selector">
           <ListSelector
-            organellSVGs={this.props.organellSVGs}
-            organellData={this.props.organellData}
+            itemData={this.props.itemData}
             selection={this.state.selectedNames}
             onClick={this.handleClick}
           />
@@ -80,15 +79,15 @@ export default class CellOrganellesSelector extends Component {
   }
 }
 
-CellOrganellesSelector.propTypes = {
-  organellData: PropTypes.arrayOf(
+GraphicListSelector.propTypes = {
+  itemData: PropTypes.arrayOf(
       PropTypes.shape({
           name: PropTypes.string.isRequired,
           color: PropTypes.string.isRequired,
           items: PropTypes.arrayOf(PropTypes.string).isRequired,
       })
   ).isRequired,
-  organellSVGs: PropTypes.arrayOf(
+  itemSVGs: PropTypes.arrayOf(
       PropTypes.shape({
           name: PropTypes.string.isRequired,
           clickAreaPath: PropTypes.string.isRequired,

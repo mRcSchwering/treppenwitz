@@ -19,7 +19,7 @@ export default class ListSelector extends Component {
   }
 
   render() {
-    const listItems = this.props.organellData.map((d) => {
+    const listItems = this.props.itemData.map((d) => {
       return <ListItem
         key={d.name}
         name={d.name}
@@ -34,18 +34,11 @@ export default class ListSelector extends Component {
 ListSelector.propTypes = {
   selection: PropTypes.arrayOf(PropTypes.string).isRequired,
   onClick: PropTypes.func.isRequired,
-  organellData: PropTypes.arrayOf(
+  itemData: PropTypes.arrayOf(
       PropTypes.shape({
           name: PropTypes.string.isRequired,
           color: PropTypes.string.isRequired,
           items: PropTypes.arrayOf(PropTypes.string).isRequired,
-      })
-  ).isRequired,
-  organellSVGs: PropTypes.arrayOf(
-      PropTypes.shape({
-          name: PropTypes.string.isRequired,
-          clickAreaPath: PropTypes.string.isRequired,
-          graphicElements: PropTypes.arrayOf(PropTypes.element).isRequired,
       })
   ).isRequired,
 };

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 
-export default class Organell extends Component {
+export default class GraphicItem extends Component {
 
   getOpacity() {
     return this.props.isSelected ? 0.8 : 0.3;
@@ -10,26 +10,26 @@ export default class Organell extends Component {
 
   render() {
     return (
-      <g name={this.props.organellSVG.name}>
+      <g name={this.props.itemSVG.name}>
         <ColorArea
             fill={this.props.color}
             opacity={this.getOpacity()}
-            path={this.props.organellSVG.clickAreaPath} />
-        <Graphic elements={this.props.organellSVG.graphicElements} />
+            path={this.props.itemSVG.clickAreaPath} />
+        <Graphic elements={this.props.itemSVG.graphicElements} />
         <ClickArea
-            name={this.props.organellSVG.name}
-            path={this.props.organellSVG.clickAreaPath}
+            name={this.props.itemSVG.name}
+            path={this.props.itemSVG.clickAreaPath}
             onClick={this.props.onClick} />
       </g>
     );
   }
 }
 
-Organell.propTypes = {
+GraphicItem.propTypes = {
   color: PropTypes.PropTypes.string.isRequired,
   isSelected: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
-  organellSVG: PropTypes.shape({
+  itemSVG: PropTypes.shape({
       name: PropTypes.string.isRequired,
       clickAreaPath: PropTypes.string.isRequired,
       graphicElements: PropTypes.arrayOf(PropTypes.element).isRequired,

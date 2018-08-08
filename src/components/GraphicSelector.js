@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Organell from './Organell';
+import GraphicItem from './GraphicItem';
 import PropTypes from 'prop-types';
 
 
@@ -14,12 +14,12 @@ export default class GraphicSelector extends Component {
     this.props.onClick(name);
   }
 
-  isOrganellInSelection(name) {
+  isItemInSelection(name) {
     return this.props.selection.includes(name);
   }
 
-  getOrganellColor(name){
-    const filtered = this.props.organellData.filter(d => d.name === name);
+  getItemColor(name){
+    const filtered = this.props.itemData.filter(d => d.name === name);
     if (filtered.length > 0) {
       return filtered[0].color;
     }
@@ -27,13 +27,13 @@ export default class GraphicSelector extends Component {
   }
 
   render() {
-    const orgs = this.props.organellSVGs.map((d) => {
+    const orgs = this.props.itemSVGs.map((d) => {
       return (
-        <Organell
+        <GraphicItem
           key={d.name}
-          organellSVG={d}
-          isSelected={this.isOrganellInSelection(d.name)}
-          color={this.getOrganellColor(d.name)}
+          itemSVG={d}
+          isSelected={this.isItemInSelection(d.name)}
+          color={this.getItemColor(d.name)}
           onClick={this.handleClick}
         />
       );
@@ -47,14 +47,14 @@ export default class GraphicSelector extends Component {
 GraphicSelector.propTypes = {
   selection: PropTypes.arrayOf(PropTypes.string).isRequired,
   onClick: PropTypes.func.isRequired,
-  organellData: PropTypes.arrayOf(
+  itemData: PropTypes.arrayOf(
       PropTypes.shape({
           name: PropTypes.string.isRequired,
           color: PropTypes.string.isRequired,
           items: PropTypes.arrayOf(PropTypes.string).isRequired,
       })
   ).isRequired,
-  organellSVGs: PropTypes.arrayOf(
+  itemSVGs: PropTypes.arrayOf(
       PropTypes.shape({
           name: PropTypes.string.isRequired,
           clickAreaPath: PropTypes.string.isRequired,
